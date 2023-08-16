@@ -1,16 +1,7 @@
 ---
 - hosts: server
-  remote_user: ubuntu
   become: yes
   tasks:
-    - name: Update apt
-      shell: sudo apt update
-    - name: Install Docker
-      apt:
-        name:
-          - docker
-          - docker-compose
-        state: present
     - name: Login DockerHub
       shell: docker login -u "{{DOCKER_USERNAME}}" -p "{{DOCKER_PASSWORD}}"
     - name: Copy file
