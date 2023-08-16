@@ -33,17 +33,17 @@ pipeline {
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                    // ansiblePlaybook(
-                    //     credentialsId: 'private_key',
-                    //     playbook: 'playbook.yml',
-                    //     inventory: 'hosts',
-                    //     become: 'yes',
-                    //     extraVars: [
-                    //         DOCKER_USERNAME: "${DOCKER_USERNAME}",  
-                    //         DOCKER_PASSWORD: "${DOCKER_PASSWORD}" 
-                    //     ]
-                    // )
-                    sh "ansible-playbook playbook.yml lab-server -e DOCKER_USERNAME: ${DOCKER_USERNAME} -e DOCKER_PASSWORD: ${DOCKER_PASSWORD}"
+                    ansiblePlaybook(
+                        // credentialsId: 'private_key',
+                        playbook: 'playbook.yml',
+                        inventory: 'lab-server',
+                        become: 'yes',
+                        extraVars: [
+                            DOCKER_USERNAME: "${DOCKER_USERNAME}",  
+                            DOCKER_PASSWORD: "${DOCKER_PASSWORD}" 
+                        ]
+                    )
+                    // sh "ansible-playbook playbook.yml lab-server -e DOCKER_USERNAME: ${DOCKER_USERNAME} -e DOCKER_PASSWORD: ${DOCKER_PASSWORD}"
                 }
                 
             }
