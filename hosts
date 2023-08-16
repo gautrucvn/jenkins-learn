@@ -1,2 +1,2 @@
 [server]
-172.16.20.231
+172.16.20.231 ansible_user=msp ansible_password=MSP@01042020 ansible_sudo_pass=MSP@01042020
