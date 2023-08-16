@@ -1,5 +1,5 @@
 ---
-- hosts: server
+- hosts: lab-server
   become: yes
   tasks:
     - name: Login DockerHub
