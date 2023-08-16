@@ -1,5 +1,6 @@
 ---
-- hosts: lab-server
+- hosts: server
+  remote_user: msp
   become: yes
   tasks:
     - name: Login DockerHub
@@ -7,7 +8,7 @@
     - name: Copy file
       copy:
         src: docker-compose.yaml
-        dest: /home/ubuntu/
+        dest: /home/msp/
     - name: Restart docker-compose
       shell: |
           docker-compose stop
