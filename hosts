@@ -1,2 +1,2 @@
 [server]
-172.16.20.231 ansible_user=msp ansible_password=MSP@01042020 ansible_sudo_pass=MSP@01042020
+172.16.20.231 ansible_user="root" ansible_python_interpreter='/usr/bin/env python3' ansible_ssh_extra_args='-o StrictHostKeyChecking=no'
