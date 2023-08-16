@@ -43,7 +43,7 @@ pipeline {
                     //         DOCKER_PASSWORD: "${DOCKER_PASSWORD}" 
                     //     ]
                     // )
-                    sh "ansible-playbook playbook.yml -e DOCKER_USERNAME: ${DOCKER_USERNAME} -e DOCKER_PASSWORD: ${DOCKER_PASSWORD}"
+                    sh "ansible-playbook playbook.yml -e DOCKER_USERNAME: '${DOCKER_USERNAME}' -e DOCKER_PASSWORD: '${DOCKER_PASSWORD}'"
                 }
                 
             }
