@@ -34,7 +34,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     ansiblePlaybook(
-                        // credentialsId: 'private_key',
+                        credentialsId: 'private_key',
                         playbook: 'playbook.yml',
                         inventory: 'hosts',
                         become: 'yes',
