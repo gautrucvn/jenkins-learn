@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git credentialsId: 'github-token', url: 'https://github.com/gautrucvn/jenkins-learn.git'
-
+                git credentialsId: 'github-account', url: 'https://github.com/gautrucvn/jenkins-learn.git'
             }
         }
     }
