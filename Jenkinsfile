@@ -10,7 +10,7 @@ pipeline {
         stage('Build Docker') {
             steps {
                 withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
-                    sh label: '', script: 'docker build -t rlucifer97/nodejs-test:v1'
+                    sh label: '', script: 'docker build -t rlucifer97/nodejs-test:v1 .'
                     sh label: '', script: 'docker push rlucifer97/nodejs-test:v1'
                 }
             }
